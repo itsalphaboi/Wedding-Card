@@ -8,6 +8,7 @@ export default function AuthPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [successMsg, setSuccessMsg] = useState('');
   const [loading, setLoading] = useState(false);
   const { signIn, signUp } = useAuth();
   const navigate = useNavigate();
@@ -15,6 +16,7 @@ export default function AuthPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
+    setSuccessMsg('');
     setLoading(true);
 
     try {
@@ -23,10 +25,17 @@ export default function AuthPage() {
         if (error) throw error;
         navigate('/dashboard');
       } else {
-        const { error } = await signUp({ email, password });
+        const { data, error } = await signUp({ email, password });
         if (error) throw error;
-        // Supabase might require email verification, but usually it auto-logs in if disabled
-        navigate('/dashboard');
+        
+        if (data?.session === null) {
+          setSuccessMsg('Account created! Please check your email inbox to verify your account before logging in.');
+          setEmail('');
+          setPassword('');
+          setIsLogin(true); // Switch them to login view so they can login after confirming
+        } else {
+          navigate('/dashboard');
+        }
       }
     } catch (err) {
       setError(err.message);
@@ -44,6 +53,11 @@ export default function AuthPage() {
         <h1 className={styles.title}>{isLogin ? 'Welcome Back' : 'Create an Account'}</h1>
 
         {error && <div className={styles.error}>{error}</div>}
+        {successMsg && (
+          <div style={{ color: '#155724', background: '#d4edda', border: '1px solid #c3e6cb', padding: '0.75rem', borderRadius: '4px', marginBottom: '1rem', fontSize: '0.9rem', textAlign: 'center', lineHeight: '1.5' }}>
+            {successMsg}
+          </div>
+        )}
 
         <form className={styles.form} onSubmit={handleSubmit}>
           <div className={styles.inputGroup}>
