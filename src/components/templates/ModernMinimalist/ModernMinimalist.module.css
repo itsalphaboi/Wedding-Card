@@ -1,0 +1,397 @@
+/* ══════════════════════════════════════════════════════════
+   Modern Minimalist Template — Styles
+   ══════════════════════════════════════════════════════════ */
+
+.template {
+  --_primary: var(--color-primary, #2d2d2d);
+  --_secondary: var(--color-secondary, #c9a84c);
+  --_accent: var(--color-accent, #c9a84c);
+  --_text: var(--color-text, #1a1a1a);
+  --_bg: var(--color-background, #faf9f6);
+  --_heading: var(--font-heading, 'Playfair Display', serif);
+  --_body: var(--font-body, 'Inter', sans-serif);
+
+  font-family: var(--_body);
+  color: var(--_text);
+  background: var(--_bg);
+  overflow-x: hidden;
+}
+
+/* ─── HERO ─── */
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  text-align: center;
+  padding: 2rem;
+}
+
+.monogramFrame {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(160px, 30vw, 240px);
+  height: clamp(160px, 30vw, 240px);
+  margin-bottom: 2.5rem;
+}
+
+.monogramBorder {
+  position: absolute;
+  inset: 0;
+}
+
+.monogramText {
+  font-family: var(--_heading);
+  font-size: clamp(2.5rem, 7vw, 4rem);
+  font-weight: 700;
+  color: var(--_primary);
+  letter-spacing: 0.15em;
+  z-index: 1;
+}
+
+.heroNames {
+  font-family: var(--_heading);
+  font-size: clamp(2rem, 6vw, 4rem);
+  font-weight: 700;
+  color: var(--_text);
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+
+.heroAmpersand {
+  display: inline-block;
+  margin: 0 0.4em;
+  color: var(--_accent);
+  font-weight: 400;
+}
+
+.heroDate {
+  margin-top: 1.5rem;
+  font-family: var(--_body);
+  font-size: clamp(0.85rem, 2vw, 1.1rem);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--_secondary);
+}
+
+.heroLine {
+  width: 1px;
+  height: 60px;
+  margin-top: 3rem;
+  background: var(--_accent);
+  opacity: 0.5;
+}
+
+/* ─── SECTION COMMON ─── */
+.section {
+  padding: 5rem 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-family: var(--_heading);
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  text-align: center;
+  color: var(--_text);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.sectionSubtitle {
+  text-align: center;
+  font-family: var(--_body);
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--_secondary);
+  margin-bottom: 3rem;
+}
+
+.goldLine {
+  width: 60px;
+  height: 1px;
+  margin: 0 auto 3rem;
+  background: var(--_accent);
+  border: none;
+}
+
+/* ─── COUNTDOWN SECTION ─── */
+.countdownSection {
+  text-align: center;
+  padding: 4rem 1.5rem;
+  border-top: 1px solid color-mix(in srgb, var(--_accent) 20%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--_accent) 20%, transparent);
+}
+
+/* ─── EVENT DETAILS ─── */
+.detailsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 640px) {
+  .detailsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.detailCard {
+  position: relative;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  border: 1px solid color-mix(in srgb, var(--_accent) 30%, transparent);
+  background: transparent;
+}
+
+.detailCard::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background: var(--_accent);
+}
+
+.detailCard h3 {
+  font-family: var(--_heading);
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  margin: 0 0 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.detailCard p {
+  font-family: var(--_body);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0.3rem 0;
+  color: var(--_text);
+  opacity: 0.85;
+}
+
+.detailLabel {
+  font-size: 0.75rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--_secondary) !important;
+  opacity: 1 !important;
+  margin-bottom: 0.3rem !important;
+}
+
+.dressCode {
+  grid-column: 1 / -1;
+  text-align: center;
+}
+
+/* ─── VENUE ─── */
+.venueSection {
+  text-align: center;
+}
+
+.venueName {
+  font-family: var(--_heading);
+  font-size: clamp(1.4rem, 3.5vw, 2rem);
+  font-weight: 600;
+  color: var(--_text);
+  margin-bottom: 0.5rem;
+}
+
+.venueAddress {
+  font-family: var(--_body);
+  font-size: 0.95rem;
+  color: var(--_text);
+  opacity: 0.7;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+.mapContainer {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  border: 1px solid color-mix(in srgb, var(--_accent) 30%, transparent);
+  overflow: hidden;
+}
+
+.mapContainer iframe {
+  display: block;
+  width: 100%;
+  height: 350px;
+  border: none;
+}
+
+/* ─── RSVP ─── */
+.rsvpForm {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.formGroup label {
+  font-family: var(--_body);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--_secondary);
+  font-weight: 600;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  font-family: var(--_body);
+  font-size: 0.95rem;
+  padding: 0.8rem 0;
+  border: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--_accent) 40%, transparent);
+  background: transparent;
+  color: var(--_text);
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+  border-bottom-color: var(--_accent);
+}
+
+.formGroup textarea {
+  min-height: 80px;
+  resize: vertical;
+  border: 1px solid color-mix(in srgb, var(--_accent) 30%, transparent);
+  padding: 0.8rem;
+  margin-top: 0.3rem;
+}
+
+.attendingButtons {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.attendingBtn {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  border: 1px solid color-mix(in srgb, var(--_accent) 40%, transparent);
+  background: transparent;
+  font-family: var(--_body);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--_text);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.attendingBtn:hover {
+  border-color: var(--_accent);
+}
+
+.attendingBtnActive {
+  background: var(--_primary);
+  border-color: var(--_primary);
+  color: var(--_bg);
+}
+
+.submitBtn {
+  margin-top: 0.5rem;
+  padding: 1rem 3rem;
+  border: 1px solid var(--_accent);
+  background: transparent;
+  color: var(--_text);
+  font-family: var(--_body);
+  font-size: 0.8rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+  align-self: center;
+}
+
+.submitBtn:hover {
+  background: var(--_accent);
+  color: white;
+}
+
+/* ─── Success ─── */
+.successMessage {
+  text-align: center;
+  padding: 2rem;
+}
+
+.successMessage h3 {
+  font-family: var(--_heading);
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  color: var(--_text);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.successMessage p {
+  font-family: var(--_body);
+  font-size: 0.95rem;
+  color: var(--_text);
+  opacity: 0.7;
+}
+
+.confettiDot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--_accent);
+}
+
+.confettiContainer {
+  position: relative;
+  display: inline-block;
+}
+
+/* ─── FOOTER ─── */
+.footer {
+  text-align: center;
+  padding: 4rem 1.5rem;
+  border-top: 1px solid color-mix(in srgb, var(--_accent) 15%, transparent);
+}
+
+.footerText {
+  font-family: var(--_body);
+  font-size: 0.85rem;
+  color: var(--_text);
+  opacity: 0.5;
+  letter-spacing: 0.1em;
+}
+
+.footerNames {
+  font-family: var(--_heading);
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  color: var(--_text);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+/* ─── Geometric decoration ─── */
+.geoLine {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.15;
+}

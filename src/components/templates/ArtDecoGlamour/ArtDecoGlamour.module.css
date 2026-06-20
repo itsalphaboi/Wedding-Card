@@ -1,0 +1,281 @@
+.template {
+  min-height: 100vh;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  position: relative;
+  background-image: 
+    linear-gradient(rgba(201, 168, 76, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201, 168, 76, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Typography styles */
+.accentText {
+  color: var(--color-accent);
+}
+
+.heading {
+  font-family: var(--font-heading);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+/* SVG Decorations */
+.decoLines {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.line {
+  height: 2px;
+  background-color: var(--color-accent);
+  width: 60px;
+}
+
+.diamond {
+  width: 12px;
+  height: 12px;
+  background-color: var(--color-accent);
+  transform: rotate(45deg);
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+}
+
+.heroFrame {
+  position: absolute;
+  inset: 2rem;
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  pointer-events: none;
+}
+
+.heroFrameInner {
+  position: absolute;
+  inset: 1rem;
+  border: 2px solid var(--color-accent);
+}
+
+.heroContent {
+  text-align: center;
+  z-index: 1;
+  background: var(--color-background);
+  padding: 3rem;
+  border: 1px solid var(--color-accent);
+}
+
+.fanTop {
+  width: 150px;
+  height: 75px;
+  margin: 0 auto 2rem;
+  fill: none;
+  stroke: var(--color-accent);
+  stroke-width: 2;
+}
+
+.names {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.date {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  letter-spacing: 0.3em;
+  margin-top: 1rem;
+}
+
+/* Event Details */
+.detailsSection {
+  padding: 6rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-size: clamp(2rem, 4vw, 3rem);
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--color-accent);
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.detailCard {
+  border: 1px solid var(--color-accent);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  background: var(--color-background);
+  position: relative;
+}
+
+.detailCard::before, .detailCard::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--color-accent);
+}
+
+.detailCard::before {
+  top: -5px;
+  left: -5px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.detailCard::after {
+  bottom: -5px;
+  right: -5px;
+  border-left: none;
+  border-top: none;
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-accent);
+}
+
+.cardText {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  letter-spacing: 0.05em;
+}
+
+/* Venue Section */
+.venueSection {
+  padding: 6rem 2rem;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.venueFrame {
+  padding: 1rem;
+  border: 2px solid var(--color-accent);
+  margin-top: 2rem;
+  position: relative;
+}
+
+.venueFrameInner {
+  border: 1px solid rgba(201, 168, 76, 0.5);
+  padding: 0.5rem;
+}
+
+.mapContainer {
+  width: 100%;
+  height: 400px;
+  position: relative;
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+  border: none;
+  filter: grayscale(100%) contrast(120%) invert(90%); /* Faux dark mode */
+}
+
+/* RSVP Form */
+.rsvpSection {
+  padding: 6rem 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 3rem;
+  text-align: left;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  color: var(--color-accent);
+}
+
+.input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-accent);
+  padding: 0.8rem 0;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  transition: border-color 0.3s;
+}
+
+.input:focus {
+  outline: none;
+  border-bottom-width: 2px;
+}
+
+.textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.submitBtn {
+  background: transparent;
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  padding: 1rem 2rem;
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  margin-top: 1rem;
+}
+
+.submitBtn:hover {
+  background: var(--color-accent);
+  color: var(--color-background);
+}
+
+.successMessage {
+  padding: 3rem;
+  border: 1px solid var(--color-accent);
+  margin-top: 2rem;
+}
+
+/* Finale */
+.finaleSection {
+  padding: 8rem 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.finaleText {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--color-accent);
+  margin-bottom: 2rem;
+}

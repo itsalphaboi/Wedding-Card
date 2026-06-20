@@ -1,0 +1,105 @@
+/* ─── CountdownTimer ─── */
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+}
+
+.label {
+  font-family: var(--font-heading, 'Great Vibes', cursive);
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  color: var(--color-primary);
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+@media (min-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* ─── Individual unit card ─── */
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+  padding: 1.2rem 1.5rem;
+  border-radius: 12px;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.5)
+  );
+  border: 1px solid var(--color-primary, #f4c2c2);
+  box-shadow:
+    0 4px 15px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  overflow: hidden;
+}
+
+/* Decorative accent bar at the top */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--color-primary, #f4c2c2),
+    var(--color-accent, #d4af37)
+  );
+}
+
+/* Middle line to mimic a flip card */
+.card::after {
+  content: '';
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  top: 55%;
+  height: 1px;
+  background: var(--color-primary, #f4c2c2);
+  opacity: 0.3;
+}
+
+.number {
+  font-family: var(--font-heading, 'Playfair Display', serif);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-text, #1a1a1a);
+}
+
+.unit {
+  margin-top: 0.5rem;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-primary, #f4c2c2);
+  font-weight: 600;
+}
+
+/* ─── Arrived state ─── */
+.arrived {
+  font-family: var(--font-heading, 'Great Vibes', cursive);
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  color: var(--color-primary);
+  text-align: center;
+  padding: 2rem 1rem;
+}

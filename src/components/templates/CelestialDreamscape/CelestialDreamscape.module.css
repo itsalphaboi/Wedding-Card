@@ -1,0 +1,301 @@
+.template {
+  min-height: 100vh;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Starfield Background */
+.starfield {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.star {
+  position: absolute;
+  background-color: var(--color-accent);
+  border-radius: 50%;
+  box-shadow: 0 0 4px var(--color-accent);
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  background: radial-gradient(ellipse at top, rgba(27, 58, 92, 0.4) 0%, transparent 70%);
+}
+
+.moon {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 2rem;
+  fill: none;
+  stroke: var(--color-accent);
+  stroke-width: 2;
+  filter: drop-shadow(0 0 10px rgba(232, 213, 183, 0.5));
+}
+
+.names {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 8vw, 6rem);
+  color: var(--color-accent);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 20px rgba(232, 213, 183, 0.3);
+}
+
+.ampersand {
+  font-size: 0.6em;
+  opacity: 0.8;
+  display: block;
+  margin: 0.5rem 0;
+}
+
+.date {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-top: 1.5rem;
+  opacity: 0.9;
+}
+
+/* Written in the Stars */
+.storySection {
+  padding: 6rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.constellation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.sectionTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: var(--color-accent);
+  margin-bottom: 2rem;
+}
+
+.storyText {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Event Details */
+.detailsSection {
+  padding: 6rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.detailsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.detailCard {
+  background: rgba(27, 58, 92, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(232, 213, 183, 0.2);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.cardTitle {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+  letter-spacing: 0.1em;
+}
+
+.cardText {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Venue */
+.venueSection {
+  padding: 6rem 2rem;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.venueName {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+}
+
+.venueAddress {
+  font-size: 1.1rem;
+  opacity: 0.8;
+  margin-bottom: 2rem;
+}
+
+.mapContainer {
+  width: 100%;
+  height: 400px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(232, 213, 183, 0.3);
+  box-shadow: 0 0 30px rgba(232, 213, 183, 0.1);
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+  border: none;
+  filter: invert(90%) hue-rotate(180deg) brightness(80%) contrast(120%); /* Faux dark mode map */
+}
+
+/* RSVP */
+.rsvpSection {
+  padding: 6rem 2rem;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(232, 213, 183, 0.3);
+  padding: 1rem;
+  border-radius: 8px;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 15px rgba(232, 213, 183, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.submitBtn {
+  background: var(--color-accent);
+  color: var(--color-primary);
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 30px;
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.submitBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(232, 213, 183, 0.4);
+}
+
+/* Closing */
+.closingSection {
+  padding: 8rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.closingText {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--color-accent);
+  margin-bottom: 2rem;
+}
+
+.shootingStar {
+  position: absolute;
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-accent));
+  transform: rotate(-45deg);
+}
+
+.successMessage {
+  text-align: center;
+  padding: 3rem;
+  background: rgba(27, 58, 92, 0.5);
+  border-radius: 16px;
+  border: 1px solid var(--color-accent);
+}
+
+.successIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* Utilities */
+.radioGroup {
+  display: flex;
+  gap: 1rem;
+}
+
+.radioLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
