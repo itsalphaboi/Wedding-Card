@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Eye, ArrowLeft, ArrowRight, Check } from 'lucide-react';
 import { useInvitation } from '../../context/InvitationContext';
+import { useAuth } from '../../context/AuthContext';
 import { TEMPLATES } from '../../data/templates';
 import { FONT_PAIRINGS } from '../../data/fonts';
 import { COLOR_PALETTES } from '../../data/palettes';
@@ -29,8 +30,15 @@ const templateComponents = {
 
 function BuilderPage() {
   const { state, dispatch } = useInvitation();
+  const { user } = useAuth();
   const [currentStep, setCurrentStep] = useState(1);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!user) {
+      navigate('/auth');
+    }
+  }, [user, navigate]);
 
   const handleTemplateSelect = (templateId) => {
     dispatch({ type: 'SET_TEMPLATE', payload: templateId });
